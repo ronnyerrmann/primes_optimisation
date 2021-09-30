@@ -28,24 +28,24 @@ for entry in primes:
 if maxprime < max(primes):      # Finished already
     exit(0)
 
-primes = np.array([3,7])      # Division by 2 or 5 is not necessary to test
+primes = np.array([3,7])        # Division by 2 or 5 is not necessary to test
 primes_2 = primes**2
 
-stepstart = 11
+stepstart = 11                  # Make sure it starts with an uneven number
 while stepstart <  maxprime:
     stepend = min(stepstart+100000, primes_2[-1], maxprime)
-    numbers_to_test = np.arange(stepstart,stepend,2)              # Make sure it starts with an uneven number
+    numbers_to_test = np.arange(stepstart,stepend,2)            # Initialise the numbers to be tested in this step
     for ii in range(5):
         if str(numbers_to_test[ii])[-1] == '5':
             break
-    remove_5 = np.arange(ii,numbers_to_test.shape[0],5)      # Positions of numbers ending with 5 in the above list,
+    remove_5 = np.arange(ii,numbers_to_test.shape[0],5)         # Positions of numbers ending with 5 in the above list,
     numbers_to_test = np.delete(numbers_to_test, remove_5)
     
-    isprime = (numbers_to_test > 0)
-    maxpos = np.where(primes_2 > numbers_to_test[-1])[0][0]
+    isprime = (numbers_to_test > 0)                             # Start with setting that all numbers could be primes
+    maxpos = np.where(primes_2 > numbers_to_test[-1])[0][0]     # Not all prime numbers need to be tested
     for prime in primes[:maxpos]:
-        remain = numbers_to_test[isprime]%prime
-        isprime[isprime] = (remain > 0)
+        remain = numbers_to_test[isprime]%prime                 # Only calculate for numbers that can be primes
+        isprime[isprime] = (remain > 0)                         # Only if a remainder exist the number still could be a prime
     
     primes = np.append(primes, numbers_to_test[isprime])
     primes_2 = np.append(primes_2, numbers_to_test[isprime]**2)
