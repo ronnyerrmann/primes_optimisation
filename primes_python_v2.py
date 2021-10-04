@@ -14,7 +14,7 @@ if len(sys.argv) < 2:
     exit(1)
 
 try:
-    maxprime = int(sys.argv[1])
+    maxprime = int(float(sys.argv[1]))
 except:
     print('Please give an integer for the maximum potential prime to be calculated')
 
@@ -45,7 +45,6 @@ for ii in numbers_to_test:
     if isprime:
         primes.append(ii)
         print(ii)
-        continue
     
 """
 time python3 primes_python_v2.py 1000000

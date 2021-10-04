@@ -16,14 +16,19 @@ if len(sys.argv) < 2:
     exit(1)
 
 try:
-    maxprime = int(sys.argv[1])
+    maxprime = int(float(sys.argv[1]))
 except:
     print('Please give an integer for the maximum potential prime to be calculated')
 
+printprimes = True
+if 'noprint' in sys.argv:
+    printprimes = False
+
 # Start with the lowest primes
 primes = [2,3,5,7]
-for entry in primes:
-    print(entry)
+if printprimes:
+    for entry in primes:
+        print(entry)
 
 if maxprime < max(primes):      # Finished already
     exit(0)
@@ -49,8 +54,9 @@ while stepstart <  maxprime:
     
     primes = np.append(primes, numbers_to_test[isprime])
     primes_2 = np.append(primes_2, numbers_to_test[isprime]**2)
-    #for ii in numbers_to_test[isprime]:
-    #    print(ii)
+    if printprimes:
+        for ii in numbers_to_test[isprime]:
+            print(ii)
     stepstart = numbers_to_test[-1]+2
 
 

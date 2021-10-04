@@ -18,4 +18,12 @@ Needed less than 3 seconds for primes up to 1E6. Only one core was free. About 1
 
 Needed about 14 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out.
 
+## primes_cpp_v1.cpp
+* Only doing the necessary calculations, each number and each prime are calculated consecutively
+
+Needed less than 1 seconds for primes up to 1E6.
+
+Needed about 7 seconds for primes up to 10E6 when the other 4 cores are free and the numbers are not printed out. About 2 second comes from the printing of the numbers.
+
+Needed about 4 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out.
 
