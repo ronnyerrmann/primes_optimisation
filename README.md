@@ -35,5 +35,13 @@ Needed about 95 seconds for primes up to 100E6 (over 10 minutes total CPU time).
 
 Needed less than 1 seconds for primes up to 1E6.
 
-Needed about 4 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out. About 2 second comes from the printing of the numbers.
+Needed about 4 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out. About 2 seconds comes from the printing of the numbers.
+
+
+## primes_java_v1.cpp
+* Only doing the necessary calculations, each number and each prime are calculated consecutively
+
+Needed less than 2 seconds for primes up to 1E6.
+
+Needed about 6 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out. About 2 seconds comes from the printing of the numbers.
 

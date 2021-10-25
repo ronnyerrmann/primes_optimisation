@@ -88,5 +88,5 @@ if __name__ == "__main__":
 time python3 primes_python_v4.py 1E7 1E5 noprint
 0m3.634s 0m3.657s 0m3.658s
 time python3 primes_python_v4.py 1E8 1E5 noprint
-1m35.063s 
+1m35.063s 1m33.791s 1m37.206s
 """
