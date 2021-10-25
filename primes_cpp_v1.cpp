@@ -12,9 +12,9 @@ int main(int argc, char *argv[])
         return 1;
     }
     
-    int maxprime = (int)(stold( argv[1] ) + 0.5) ;
+    int maxprime = (long)(stold( argv[1] ) + 0.5) ;
     bool isprime = true;
-    vector<int> primes {3,7}; 
+    vector<long> primes {3,7}; 
     int number_to_test = 11;    // Start with prime 11
     int add[4] = {2,4,2,2};     // Ignore the numbers endding with 5
     int pos_add = 0;
@@ -56,6 +56,10 @@ without cout, cores are free
 0m3.873s 0m3.816s 0m3.953s
 time ./primes_cpp_v1 100E6
 1m28.725s 1m31.448s 1m28.707s
+long instead of int
+g++ -o primes_cpp_v1 primes_cpp_v1.cpp
+time ./primes_cpp_v1 10E6
+0m6.647s 0m6.670s 0m6.649s
 */
 
 

@@ -37,11 +37,19 @@ Needed less than 1 seconds for primes up to 1E6.
 
 Needed about 4 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out. About 2 seconds comes from the printing of the numbers.
 
+Needed about 7 seconds for primes up to 10E6 when using long instead of int.
+
+
+## primes_cpp_v2.cpp
+* Instead of adding one prime at a time to the vector, enlarge the vector in bigger steps and then fill
+
+Needed about 7 seconds for primes up to 10E6, improvement to primes\_cpp\_v1.cpp is only few percent.
+
 
 ## primes_java_v1.cpp
 * Only doing the necessary calculations, each number and each prime are calculated consecutively
 
 Needed less than 2 seconds for primes up to 1E6.
 
-Needed about 6 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out. About 2 seconds comes from the printing of the numbers.
+Needed about 5 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out. About 1 second comes from the printing of the numbers. Without compiling through javac another 0.5 seconds are needed.
 

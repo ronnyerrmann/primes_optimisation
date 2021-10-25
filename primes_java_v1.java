@@ -47,13 +47,15 @@ public class primes_java_v1       // Better: start with upper case letter, but t
         */
         int ii;
   
-        // create a new array of size n+1
+        // create a new array of size nn_max
         long newarr[] = new long[nn_max];
   
         // insert the elements from
         // the old array into the new array
-        for (ii = 0; ii < oldnn; ii++)
+        for (ii = 0; ii <= oldnn; ii++)
+        {
             newarr[ii] = arr[ii];
+        }
   
         return newarr;
     }
@@ -68,7 +70,8 @@ public class primes_java_v1       // Better: start with upper case letter, but t
         
         int maxprime = (int)(Float.parseFloat( args[0] ) + 0.5) ;
         boolean isprime = true;
-        int primesArr_nn_max = 1000;
+        int add_entries_arr = 10000;
+        int primesArr_nn_max = add_entries_arr;
         long[] primesArr = new long[primesArr_nn_max];
         primesArr[0] = 3;
         primesArr[1] = 7;
@@ -92,11 +95,12 @@ public class primes_java_v1       // Better: start with upper case letter, but t
                 primesArr_nn += 1;
                 if (primesArr_nn >= primesArr_nn_max)
                 {
-                    primesArr = addArrayLong_mult(primesArr_nn_max+1000, primesArr, primesArr_nn-1);
-                    primesArr_nn_max += 1000;
+                    primesArr = addArrayLong_mult(primesArr_nn_max+add_entries_arr, primesArr, primesArr_nn-1);
+                    //for(int jj = 0; jj <= primesArr_nn-1; jj++){System.out.println(primesArr[jj]);}
+                    primesArr_nn_max += add_entries_arr;
                 }   // if
                 primesArr[primesArr_nn] = number_to_test;
-                //System.out.println(number_to_test);
+                System.out.println(number_to_test);
             }   //if
             number_to_test += add[pos_add];
             pos_add ++;
@@ -113,5 +117,9 @@ with println and cores used
 time java primes_java_v1.java 10E6
 no println and cores free
 0m5.443s 0m5.561s 0m5.490s
+javac primes_java_v1.java
+time java primes_java_v1 10E6
+no println and cores free
+0m5.061s 0m5.076s 0m4.982s
 */
 
