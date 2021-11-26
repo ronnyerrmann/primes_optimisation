@@ -41,7 +41,7 @@ Needed about 7 seconds for primes up to 10E6 when using long instead of int.
 
 
 ## primes_cpp_v2.cpp
-* Instead of adding one prime at a time to the vector, enlarge the vector in bigger steps and then fill
+* Instead of adding one prime at a time to the vector, enlarge the vector in bigger steps and then fill it once the primes are calculated
 
 Needed about 7 seconds for primes up to 10E6, improvement to primes\_cpp\_v1.cpp is only few percent.
 
