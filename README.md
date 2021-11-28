@@ -53,3 +53,12 @@ Needed less than 2 seconds for primes up to 1E6.
 
 Needed about 5 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out. About 1 second comes from the printing of the numbers. Without compiling through javac another 0.5 seconds are needed.
 
+Improvement with replacing a division with a multiplication: nearly twice as fast for primes up to 10E6.
+
+## primes_java_v2.cpp
+* Only doing the necessary calculations, creating some lists in preparation to do parallel calculations. This has improved the speed, as the check which primes are not needed to be tested as often, but then handling the lists takes a bit longer.
+
+Needed less than 2 seconds for primes up to 1E6.
+
+Needed about 3 to 4 seconds for primes up to 10E6 when the other 7 cores are free and the numbers are not printed out. Testing primes in ranges of 100 is more efficient than in the ranges of 10k (trade off between uneccessary primes tested and calculating prime*prime to check what primes are not useful).
+

@@ -87,7 +87,8 @@ public class primes_java_v1       // Better: start with upper case letter, but t
                     isprime = false;
                     break;
                 }   // if
-                if (number_to_test/primesArr[jj] < primesArr[jj]){    // testing higher primes is not necessary
+                if (number_to_test < primesArr[jj]*primesArr[jj]){    // testing higher primes is not necessary
+                //if (number_to_test/primesArr[jj] < primesArr[jj]){    // testing higher primes is not necessary - takes nearly twice as long 10E6 primes
                     break;
                 }   // if
             }   // for
@@ -100,7 +101,7 @@ public class primes_java_v1       // Better: start with upper case letter, but t
                     primesArr_nn_max += add_entries_arr;
                 }   // if
                 primesArr[primesArr_nn] = number_to_test;
-                System.out.println(number_to_test);
+                //System.out.println(number_to_test);
             }   //if
             number_to_test += add[pos_add];
             pos_add ++;
@@ -121,5 +122,8 @@ javac primes_java_v1.java
 time java primes_java_v1 10E6
 no println and cores free
 0m5.061s 0m5.076s 0m4.982s
+time java primes_java_v1 10E6
+after using multiplication in line 90
+0m2.707s 0m2.716s 0m2.687s
 */
 
