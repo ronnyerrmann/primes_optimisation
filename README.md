@@ -46,6 +46,26 @@ Needed about 7 seconds for primes up to 10E6 when using long instead of int.
 Needed about 7 seconds for primes up to 10E6, improvement to primes\_cpp\_v1.cpp is only few percent.
 
 
+## primes_cpp_v3.cpp
+* Based on v1, but uses long long unsigned int
+
+This didn't increase computation time.
+
+
+## primes_cpp_v4.cpp
+* Use multithreading
+* Use three different vectors to store the primes, depending on the size of the number, to save memory
+
+This sped up the computation, but the overall CPU time remained more or less the same.
+
+
+## primes_cpp_v5.cpp
+* Only keep necessary primes to calculate the next primes in memory, as otherwise running out memory
+* Use only two different vectors to store the primes, depending on the size of the number, to save memory
+
+Slightly faster on real time, but slightly more CPU time. Saving might have some impact as well.
+
+
 ## primes_java_v1.cpp
 * Only doing the necessary calculations, each number and each prime are calculated consecutively
 

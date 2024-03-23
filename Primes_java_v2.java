@@ -1,9 +1,9 @@
 /*
 Run directly with:
-    java primes_java_v2.java
+    java Primes_java_v2.java
 Compile and run with:
-    javac primes_java_v2.java
-    java primes_java_v2 
+    javac Primes_java_v2.java
+    java Primes_java_v2 
 */
 
 import java.util.ArrayList;
@@ -178,7 +178,7 @@ public class Primes_java_v2
             
             ArrayList<Long> new_primes = new ArrayList<>();
             // Give the each entry of numbers_to_test_list to test_numbers_for_primes and then deal with the results
-            numbers_to_test_list.forEach((numbers_to_test_iter) -> {
+            numbers_to_test_list.forEach((numbers_to_test_iter) -> {            // this is a lambda, in a for loop maybe no final is necessary - although, probably still as primesArr is changed outside the loop
                 /* convert from ArrayList<Long> into a long array as otherwise test_numbers_for_primes(numbers_to_test_iter...) comes up with:
                     Primes_java_v2.java:198: error: incompatible types: long[] cannot be converted to ArrayList<Long>
                     ArrayList<Long> new_primes = test_numbers_for_primes(numbers_to_test_iter, primesArr, numbers_to_test_iter.size()-1, primesArr_nn);
