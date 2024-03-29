@@ -49,7 +49,7 @@ Needed about 7 seconds for primes up to 10E6, improvement to primes\_cpp\_v1.cpp
 ## primes_cpp_v3.cpp
 * Based on v1, but uses long long unsigned int
 
-This didn't increase computation time.
+This didn't increase computation time (as seen in python).
 
 
 ## primes_cpp_v4.cpp
@@ -61,10 +61,16 @@ This sped up the computation, but the overall CPU time remained more or less the
 
 ## primes_cpp_v5.cpp
 * Only keep necessary primes to calculate the next primes in memory, as otherwise running out memory
-* Use only two different vectors to store the primes, depending on the size of the number, to save memory
+* Use only two different vectors to store the primes, depending on the size of the number, as the number of items in first adds more overhead than savings (32 bit numbers might be stored as 64 bit anyways)
 
 Slightly faster on real time, but slightly more CPU time. Saving might have some impact as well.
 
+## primes_cpp_v6.cpp
+* When calculating primes, don't use the interface of PrimesBase, but the vector directly.
+* Allows the storing the primes in a binary file, which reads and writes quicker. The file is still quite big (400MB until 1E9) and another improvement could be to split into several files or to spend some CPU time to covert it into 62-adecimal number and store as text
+* This also shows well how quickly the complexity growths, this version requires 10 times the number of code lines compared to the first versions.
+
+Slightly faster on real time (1 second) and less CPU time (5.6 s) for primes up to 10E6.
 
 ## primes_java_v1.cpp
 * Only doing the necessary calculations, each number and each prime are calculated consecutively
