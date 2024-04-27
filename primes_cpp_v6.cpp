@@ -604,7 +604,7 @@ g++ -Wall -g -o primes_cpp_v6 primes_cpp_v6.cpp && rm my_primes.* ; time ./prime
 real	0m20.257s 0m20.206s
 user	2m11.719s 2m6.663s
 g++ -Wall -g -o primes_cpp_v6 primes_cpp_v6.cpp && rm my_primes.* ; time ./primes_cpp_v6 100E6 1E6 my_primes.bin 4       # limit to number of physical cores
-real	0m25.938s
-user	1m41.310s
+real	0m25.938s 0m22.783s 0m22.024s 0m20.868s 0m22.691s
+user	1m41.310s 1m29.240s 1m28.020s 1m21.007s 1m29.258s
 */
 

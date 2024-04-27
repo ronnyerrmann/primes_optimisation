@@ -72,6 +72,12 @@ Slightly faster on real time, but slightly more CPU time. Saving might have some
 
 Slightly faster on real time (1 second) and less CPU time (5.6 s) for primes up to 10E6.
 
+## primes_cpp_v7.cpp
+* Avoid some checks during the calculation of primes as only a vector with useful primes to check against is given.
+* Store primes more inteligent to save storage space: Using 8 bytes (64 bits) for each prime is a lot of storage wasted. To also avoid too big files, files are split for each order of magnitude, starting with "below 1E9". Now primes until 1E9 are stored as 32 bits, and in consecutive files the first prime is stored as 64 bit and then only half the differences between consecutive primes as 16 bit (until 1E11 8 bit would be enough, but that would only save 7GB, not much if calculation is done until 1E14 or more. Although there is a possible improvements: until 1E14 it's rare that half the diff is more than 8 bits, so in these cases one could store just two (or more) 8 bit numbers and add them together to save something in the order of 300 GB).
+
+Not much improvements in CPU time (5.2 s) for primes up to 10E6.
+
 ## primes_java_v1.cpp
 * Only doing the necessary calculations, each number and each prime are calculated consecutively
 
